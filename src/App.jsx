@@ -114,7 +114,7 @@ function App() {
       </header>
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center">
+      <section className="relative h-96 md:h-[500px] lg:h-[600px] flex items-center">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${heroCloset})` }}
