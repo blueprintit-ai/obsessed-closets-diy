@@ -173,7 +173,7 @@ function App() {
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-4">Premium Quality Materials</h3>
               <p className="text-gray-600">
-                Receive the same high-quality materials and precision fabrication as our full-service customers, delivered to your door.
+                High-quality materials and precision fabrication delivered to your door.
               </p>
             </div>
 
@@ -183,7 +183,7 @@ function App() {
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-4">Comprehensive Training</h3>
               <p className="text-gray-600">
-                Get detailed instructions, video tutorials, and optional in-person training to ensure your installation success.
+                Detailed instructions, video tutorials, and optional in-person training to ensure your installation success.
               </p>
             </div>
           </div>
