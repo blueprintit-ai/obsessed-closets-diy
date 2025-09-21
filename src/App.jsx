@@ -125,7 +125,7 @@ function App() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
           <div className="max-w-4xl mx-auto animate-fadeIn">
             <h1 className="text-4xl lg:text-6xl font-bold mb-6">
-              DIY Closets with Expert Guidance
+              Do-It-Yourself Closets with Expert Guidance
             </h1>
             <p className="text-xl lg:text-2xl mb-8 text-gray-200">
               Transform your space with our comprehensive and affordable DIY program - From design to installation, we guide you every step of the way
