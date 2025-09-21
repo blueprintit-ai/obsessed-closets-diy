@@ -128,7 +128,7 @@ function App() {
               DIY Closets with Expert Guidance
             </h1>
             <p className="text-xl lg:text-2xl mb-8 text-gray-200">
-              Transform your space with our comprehensive DIY program - from design to installation, we guide you every step of the way
+              Transform your space with our comprehensive and affordable DIY program - from design to installation, we guide you every step of the way
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
@@ -137,7 +137,7 @@ function App() {
                 onClick={() => scrollToSection('process')}
                 className="bg-white text-gray-900 hover:bg-gray-100 hover:text-gray-900 border-white"
               >
-                Learn Our Process
+                Discover Our Process
               </Button>
             </div>
           </div>
@@ -152,7 +152,7 @@ function App() {
               Why Choose Our DIY Program?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Get professional results with expert guidance, quality materials, and comprehensive support throughout your project.
+              Lower cost without sacrificing quality. Get professional results with expert guidance, quality materials, and comprehensive support throughout your project.
             </p>
           </div>
 
