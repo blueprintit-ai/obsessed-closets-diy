@@ -119,7 +119,7 @@ function App() {
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${heroCloset})` }}
         >
-          <div className="absolute inset-0 bg-blue-600 opacity-40"></div>
+          <div className="absolute inset-0 bg-gray-600 opacity-20"></div>
         </div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
