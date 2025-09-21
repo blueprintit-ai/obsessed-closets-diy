@@ -119,7 +119,7 @@ function App() {
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${heroCloset})` }}
         >
-          <div className="absolute inset-0 bg-blue-600 opacity-80"></div>
+          <div className="absolute inset-0 bg-blue-600 opacity-40"></div>
         </div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
@@ -135,7 +135,7 @@ function App() {
                 size="lg" 
                 variant="outline"
                 onClick={() => scrollToSection('process')}
-                className="bg-white text-black hover:bg-gray-100"
+                className="bg-white text-gray-900 hover:bg-gray-100 hover:text-gray-900 border-white"
               >
                 Learn Our Process
               </Button>
