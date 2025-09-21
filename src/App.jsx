@@ -281,7 +281,7 @@ function App() {
                   <h3 className="text-2xl font-bold text-gray-900">Delivery to You</h3>
                 </div>
                 <p className="text-lg text-gray-600 mb-4">
-                  All closet parts, hardware, and accessories are delivered to your location, ready for installation. Everything is carefully packaged and labeled for easy identification.
+                  All closet parts, hardware, and accessories are delivered to your location, ready for installation. Everything is packaged and labeled for easy identification.
                 </p>
                 <div className="flex items-center text-blue-600">
                   <Truck className="w-5 h-5 mr-2" />
