@@ -278,14 +278,14 @@ function App() {
               <div className="lg:w-1/2">
                 <div className="flex items-center mb-4">
                   <Badge className="text-lg px-4 py-2 mr-4">Step 4</Badge>
-                  <h3 className="text-2xl font-bold text-gray-900">Delivery to You</h3>
+                  <h3 className="text-2xl font-bold text-gray-900">Direct delivery to your location</h3>
                 </div>
                 <p className="text-lg text-gray-600 mb-4">
                   All closet parts, hardware, and accessories are delivered to your location, ready for installation. Everything is packaged and labeled for easy identification.
                 </p>
                 <div className="flex items-center text-blue-600">
                   <Truck className="w-5 h-5 mr-2" />
-                  <span className="font-medium">Direct delivery to your location</span>
+                  <span className="font-medium">Delivery on pallets to your driveway or garage</span>
                 </div>
               </div>
               <div className="lg:w-1/2">
