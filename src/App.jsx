@@ -128,7 +128,7 @@ function App() {
               Do-It-Yourself Closets with Expert Guidance
             </h1>
             <p className="text-xl lg:text-2xl mb-8 text-gray-200">
-              Transform your space with our comprehensive and affordable DIY program - From design to installation, we guide you every step of the way
+              Transform your space with our comprehensive DIY program - From design to installation, we guide you every step of the way
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
