@@ -161,7 +161,7 @@ function App() {
               <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Users className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Expert Design Consultation</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Personalized Design Consultation</h3>
               <p className="text-gray-600">
                 Work directly with our professional designers to create a custom solution that fits your space and lifestyle perfectly.
               </p>
