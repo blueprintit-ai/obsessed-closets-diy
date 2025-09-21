@@ -125,7 +125,7 @@ function App() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
           <div className="max-w-4xl mx-auto animate-fadeIn">
             <h1 className="text-4xl lg:text-6xl font-bold mb-6">
-              Do-It-Yourself Closets with Expert Guidance
+              Do-It-Yourself Storage Systems with Expert Guidance
             </h1>
             <p className="text-xl lg:text-2xl mb-8 text-gray-200">
               Transform your space with our comprehensive DIY program - From design to installation, we guide you every step of the way
@@ -198,7 +198,7 @@ function App() {
               Our 5-Step DIY Process
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              From initial consultation to final installation, we guide you through every step of creating your dream closet.
+              From initial consultation to final installation, we guide you through every step of creating your organized space.
             </p>
           </div>
 
@@ -211,7 +211,7 @@ function App() {
                   <h3 className="text-2xl font-bold text-gray-900">Discovery Call</h3>
                 </div>
                 <p className="text-lg text-gray-600 mb-4">
-                  We discuss your closet space(s), understand your needs, and begin the design process together. Our expert designers learn about your desires and storage requirements.
+                  We discuss your organization goals, understand your needs, and begin the design process together. Our expert designers learn about your desires and storage requirements.
                 </p>
                 <div className="flex items-center text-blue-600">
                   <Users className="w-5 h-5 mr-2" />
