@@ -40,7 +40,7 @@ function App() {
     e.preventDefault()
 
     // Your Google Apps Script URL
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbwXw8MJbPs-2XAAYJn1Jx23AZ7o1dujiGjhJJxnl35Eg6jhrppSowMbndDYYusziVBZ/exec'
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwojV5Kk4RFAN8COsHMXQmFy38VAR4_esdeIj0lHW55kUrl9Pjq48xrQIuGXRRpkYV6dg/exec'
 
     // Create FormData object
     const data = new FormData()
