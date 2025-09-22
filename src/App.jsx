@@ -663,7 +663,7 @@ function App() {
                   size="lg"
                   className="w-full"
                 >
-                  Schedule My Free Virtual Design Consultation
+                  Schedule My Free Design Consultation
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </form>
