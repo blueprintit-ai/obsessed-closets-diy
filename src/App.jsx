@@ -664,7 +664,7 @@ function App() {
                   size="lg"
                   className="w-full"
                 >
-                  Schedule My Free Consultation
+                  Schedule My Free Discovery Call
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </form>
