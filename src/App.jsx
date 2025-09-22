@@ -455,9 +455,9 @@ function App() {
               <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
                 <MapPin className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Local Expertise</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Obsession with Closets</h3>
               <p className="text-gray-600">
-                Based in Wake Forest, NC, we bring local craftsmanship and personalized service to every project.
+                Our journey began decades ago as woodworkers and cabinet makers. Over the past year, that passion evolved into an obsession with closets. We've dedicated ourselves to mastering the closet industry; training with top experts, partnering with leading fabrication specialists, and sourcing the best hardware and accessories on the market. We combine timeless craftsmanship with modern closet design to deliver a quality product built on a foundation of passion and precision.
               </p>
             </div>
           </div>
