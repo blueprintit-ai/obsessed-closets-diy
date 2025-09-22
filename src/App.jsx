@@ -426,7 +426,7 @@ function App() {
               About Obsessed Closets
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We're a family-owned business obsessed with creating beautiful, functional storage solutions that transform your daily routine.
+              We're a locally owned business obsessed with creating beautiful, functional storage solutions that transform your daily routine.
             </p>
           </div>
 
@@ -435,9 +435,9 @@ function App() {
               <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Star className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Quality Obsessed</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Quality </h3>
               <p className="text-gray-600">
-                We're obsessed with quality in every detail, from design to fabrication to installation support.
+                We're obsessed with quality in every detail; from design to fabrication to installation support.
               </p>
             </div>
 
@@ -445,9 +445,9 @@ function App() {
               <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Users className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Family Owned</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Locally Owned</h3>
               <p className="text-gray-600">
-                As a family business, we treat every customer like family and stand behind our work with personal commitment.
+                As a North Carolina native and family owned small business, we treat every customer like family and stand behind our work with personal commitment.
               </p>
             </div>
 
