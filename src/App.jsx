@@ -437,7 +437,7 @@ function App() {
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-4">Quality Control</h3>
               <p className="text-gray-600">
-                We're obsessed with quality in every detail; from design to fabrication to installation support. We are not a wholesaler that orders parts from overseas. We fabricate all our cabinet and closet parts at our shop in Wake Forest, North Carolina. 
+                We're obsessed with quality in every detail; from design to fabrication to installation support. We are not a wholesaler that orders parts from overseas. We design and fabricate all our cabinet and closet parts at our shop in Wake Forest, North Carolina. 
               </p>
             </div>
 
