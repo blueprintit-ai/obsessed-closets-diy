@@ -487,4 +487,205 @@ function App() {
               <h3 className="text-xl font-bold text-gray-900 mb-4">Obsession with Closets</h3>
               <p className="text-gray-600">
                 We've dedicated ourselves to mastering the closet industry; training with top industry experts and leading fabrication specialists, and sourcing the best hardware and accessories on the market. We combine our decades of woodworking experience and craftsmanship with modern closet design to deliver a quality product.
-              </p
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12">
+            <div>
+              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
+                Ready to Start Your DIY Journey?
+              </h2>
+              <p className="text-lg text-gray-600 mb-8">
+                Contact us today to schedule your discovery call and begin creating the closet of your dreams with expert guidance every step of the way.
+              </p>
+
+              <div className="space-y-6">
+                <div className="flex items-center">
+                  <Phone className="w-6 h-6 text-blue-600 mr-4" />
+                  <div>
+                    <p className="font-medium text-gray-900">(919) 945-9036</p>
+                    <p className="text-gray-600">Monday - Friday, 8AM - 6PM EST</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center">
+                  <Mail className="w-6 h-6 text-blue-600 mr-4" />
+                  <div>
+                    <p className="font-medium text-gray-900">info@obsessedclosets.com</p>
+                    <p className="text-gray-600">We'll respond within 24 hours</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center">
+                  <MapPin className="w-6 h-6 text-blue-600 mr-4" />
+                  <div>
+                    <p className="font-medium text-gray-900">Wake Forest, NC</p>
+                    <p className="text-gray-600">Serving the greater Triangle area</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-8 space-y-4">
+                <div className="flex items-center">
+                  <CheckCircle className="w-5 h-5 text-blue-600 mr-3" />
+                  <span className="text-gray-700">Free discovery call consultation</span>
+                </div>
+                <div className="flex items-center">
+                  <CheckCircle className="w-5 h-5 text-blue-600 mr-3" />
+                  <span className="text-gray-700">Custom design included</span>
+                </div>
+                <div className="flex items-center">
+                  <CheckCircle className="w-5 h-5 text-blue-600 mr-3" />
+                  <span className="text-gray-700">No obligation estimate</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-slate-50 rounded-lg p-8">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">Get Your Free Consultation</h3>
+
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Full Name *
+                  </label>
+                  <input
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={(e) => handleInputChange('name', e.target.value)}
+                    required
+                    className="form-input"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Email Address *
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={(e) => handleInputChange('email', e.target.value)}
+                    required
+                    className="form-input"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Phone Number *
+                  </label>
+                  <input
+                    type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={(e) => handleInputChange('phone', e.target.value)}
+                    required
+                    className="form-input"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Select Service
+                  </label>
+                  <select
+                    name="service"
+                    value={formData.service}
+                    onChange={(e) => handleInputChange('service', e.target.value)}
+                    className="form-select"
+                  >
+                    <option value="">Select a service...</option>
+                    <option value="closet">Closet</option>
+                    <option value="pantry">Pantry</option>
+                    <option value="garage">Garage</option>
+                    <option value="laundry">Laundry</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Tell us about your project
+                  </label>
+                  <textarea
+                    name="textarea"
+                    value={formData.textarea}
+                    onChange={(e) => handleInputChange('textarea', e.target.value)}
+                    placeholder="Describe your closet space, goals, and any specific requirements..."
+                    rows={4}
+                    className="form-textarea"
+                  />
+                </div>
+
+                <Button
+                  type="submit"
+                  size="lg"
+                  className="w-full"
+                >
+                  Schedule My Free Consultation
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-slate-900 text-white py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-3 gap-8">
+            <div>
+              <div className="flex items-center mb-4">
+                <img
+                  src={ocLogo}
+                  alt="Obsessed Closets Logo"
+                  className="h-14 w-auto"
+                />
+              </div>
+              <p className="text-gray-400">
+                Transform your space with expert guidance and professional-quality materials. We're obsessed with helping you create the perfect closet.
+              </p>
+            </div>
+
+            <div>
+              <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
+              <div className="space-y-2">
+                <button onClick={() => scrollToSection('process')} className="block text-gray-400 hover:text-blue-400 transition-colors">Our Process</button>
+                <button onClick={() => scrollToSection('training')} className="block text-gray-400 hover:text-blue-400 transition-colors">Training & Support</button>
+                <button onClick={() => scrollToSection('quality')} className="block text-gray-400 hover:text-blue-400 transition-colors">Quality Assurance</button>
+                <button onClick={() => scrollToSection('about')} className="block text-gray-400 hover:text-blue-400 transition-colors">About Us</button>
+              </div>
+            </div>
+
+            <div>
+              <h4 className="text-lg font-semibold mb-4">Contact Info</h4>
+              <div className="space-y-2">
+                <p className="text-gray-400">919-945-9036</p>
+                <p className="text-gray-400">info@obsessedclosets.com</p>
+                <p className="text-gray-400">Wake Forest, NC</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="border-t border-gray-800 mt-8 pt-8 text-center">
+            <p className="text-gray-400">
+              © 2024 Obsessed Closets. All rights reserved.
+            </p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  )
+}
+
+export default App
