@@ -29,6 +29,7 @@ function App() {
     email: '',
     phone: '',
     service: '',
+    timeline: '', // NEW
     textarea: ''
   })
 
@@ -48,26 +49,28 @@ function App() {
     data.append('email', formData.email)
     data.append('phone', formData.phone)
     data.append('service', formData.service)
+    data.append('timeline', formData.timeline) // NEW
     data.append('textarea', formData.textarea)
 
     try {
       console.log('Submitting form with data:', formData) // Debug log
-      
+
       const response = await fetch(scriptURL, {
         method: 'POST',
-        mode: 'no-cors', // Add this line for Google Apps Script
+        mode: 'no-cors', // Using no-cors for Apps Script cross-origin POST
         body: data,
       })
 
       // With no-cors mode, we can't read the response, so we assume success
       alert('Thank you! We will contact you soon.')
-      
-      // Clear the form fields after successful submission
+
+      // Clear the form fields after submission
       setFormData({
         name: '',
         email: '',
         phone: '',
         service: '',
+        timeline: '', // NEW
         textarea: ''
       })
 
@@ -615,6 +618,25 @@ function App() {
                     <option value="garage">Garage</option>
                     <option value="laundry">Laundry</option>
                     <option value="other">Other</option>
+                  </select>
+                </div>
+
+                {/* NEW Timeline field */}
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Timeline
+                  </label>
+                  <select
+                    name="timeline"
+                    value={formData.timeline}
+                    onChange={(e) => handleInputChange('timeline', e.target.value)}
+                    className="form-select"
+                  >
+                    <option value="">Select a timeline...</option>
+                    <option value="ASAP">ASAP</option>
+                    <option value="1 Week">1 Week</option>
+                    <option value="2 Weeks">2 Weeks</option>
+                    <option value="4+ Weeks">4+ Weeks</option>
                   </select>
                 </div>
 
