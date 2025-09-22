@@ -561,7 +561,7 @@ function App() {
             </div>
 
             <div className="bg-slate-50 rounded-lg p-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Get Your Free Consultation</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">Free Discovery Call</h3>
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
