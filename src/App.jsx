@@ -345,7 +345,7 @@ function App() {
                   <h3 className="text-2xl font-bold text-gray-900">Install with Confidence</h3>
                 </div>
                 <p className="text-lg text-gray-600 mb-4">
-                  You tackle the installation with the knowledge that we're here to support you if needed. Our team is available for questions and guidance throughout the process.
+                  You handle the installation with the knowledge that we're here to support you if needed. Our team is available for questions and guidance throughout the process.
                 </p>
                 <div className="flex items-center text-blue-600">
                   <HeadphonesIcon className="w-5 h-5 mr-2" />
