@@ -22,24 +22,68 @@ import modernCloset from './assets/modern-closet.webp'
 import qualityCloset from './assets/quality-closet-clean.png'
 import ocLogo from './assets/oc-logo-new.png'
 
+// ... (existing imports)
+
 function App() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  // ... (existing state)
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
-    description: '',
-    timeline: ''
+    service: '', // Add this field to correspond to your 'Service' column
+    textarea: '' // Update from 'description' to 'textarea'
   })
+
+  // ... (rest of the code)
+}
 
   const handleInputChange = (field, value) => {
     setFormData(prev => ({ ...prev, [field]: value }))
   }
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    console.log('Form submitted:', formData)
-    alert('Thank you! We will contact you soon.')
+ // ... (existing imports and state)
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbywbmb9MRuExAZGak9H97bIFwrUqFC2CBv_uZPnHOcA-kqFT3Jb16_mpWETs3ocjDsv7g/exec';
+  const data = new FormData();
+
+  // Append each form field to the FormData object
+  // These names must match the keys in your Google Apps Script (e.g., formData.name becomes 'name')
+  data.append('name', formData.name);
+  data.append('email', formData.email);
+  data.append('phone', formData.phone);
+  data.append('service', formData.service); // Make sure this matches your form input name
+  data.append('textarea', formData.textarea); // Make sure this matches your form input name
+
+  try {
+    const response = await fetch(scriptURL, {
+      method: 'POST',
+      body: data,
+    });
+
+    if (response.ok) {
+      alert('Thank you! We will contact you soon.');
+      // Clear the form fields after successful submission
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        service: '',
+        textarea: ''
+      });
+    } else {
+      alert('There was an error submitting the form. Please try again.');
+    }
+  } catch (error) {
+    console.error('Error:', error);
+    alert('There was an error submitting the form. Please try again.');
+  }
+};
+
+// ... (rest of the code)
   }
 
   const scrollToSection = (sectionId) => {
@@ -521,90 +565,91 @@ function App() {
             <div className="bg-slate-50 rounded-lg p-8">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">Get Your Free Consultation</h3>
               
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Full Name *
-                  </label>
-                  <input
-                    type="text"
-                    value={formData.name}
-                    onChange={(e) => handleInputChange('name', e.target.value)}
-                    required
-                    className="form-input"
-                  />
-                </div>
+<form onSubmit={handleSubmit} className="space-y-6">
+  <div>
+    <label className="block text-sm font-medium text-gray-700 mb-2">
+      Full Name *
+    </label>
+    <input
+      type="text"
+      name="name" // Make sure this is "name"
+      value={formData.name}
+      onChange={(e) => handleInputChange('name', e.target.value)}
+      required
+      className="form-input"
+    />
+  </div>
 
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Email Address *
-                  </label>
-                  <input
-                    type="email"
-                    value={formData.email}
-                    onChange={(e) => handleInputChange('email', e.target.value)}
-                    required
-                    className="form-input"
-                  />
-                </div>
+  <div>
+    <label className="block text-sm font-medium text-gray-700 mb-2">
+      Email Address *
+    </label>
+    <input
+      type="email"
+      name="email" // Make sure this is "email"
+      value={formData.email}
+      onChange={(e) => handleInputChange('email', e.target.value)}
+      required
+      className="form-input"
+    />
+  </div>
 
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Phone Number *
-                  </label>
-                  <input
-                    type="tel"
-                    value={formData.phone}
-                    onChange={(e) => handleInputChange('phone', e.target.value)}
-                    required
-                    className="form-input"
-                  />
-                </div>
+  <div>
+    <label className="block text-sm font-medium text-gray-700 mb-2">
+      Phone Number *
+    </label>
+    <input
+      type="tel"
+      name="phone" // Make sure this is "phone"
+      value={formData.phone}
+      onChange={(e) => handleInputChange('phone', e.target.value)}
+      required
+      className="form-input"
+    />
+  </div>
 
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Project Timeline
-                  </label>
-                  <select
-                    value={formData.timeline}
-                    onChange={(e) => handleInputChange('timeline', e.target.value)}
-                    className="form-select"
-                  >
-                    <option value="">Select timeline</option>
-                    <option value="asap">ASAP</option>
-                    <option value="1-3months">1-3 months</option>
-                    <option value="3-6months">3-6 months</option>
-                    <option value="6+months">6+ months</option>
-                    <option value="planning">Just planning</option>
-                  </select>
-                </div>
+  <div>
+    <label className="block text-sm font-medium text-gray-700 mb-2">
+      Service
+    </label>
+    <select
+      name="service" // Make sure this is "service"
+      value={formData.service}
+      onChange={(e) => handleInputChange('service', e.target.value)}
+      className="form-select"
+    >
+      <option value="">Select a Service</option>
+      <option value="closet">Closet</option>
+      <option value="pantry">Pantry</option>
+      <option value="garage">Garage</option>
+      <option value="laundry">Laundry</option>
+      <option value="other">Other</option>
+    </select>
+  </div>
 
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Tell us about your project
-                  </label>
-                  <textarea
-                    value={formData.description}
-                    onChange={(e) => handleInputChange('description', e.target.value)}
-                    placeholder="Describe your closet space, goals, and any specific requirements..."
-                    rows={4}
-                    className="form-textarea"
-                  />
-                </div>
-
-                <Button 
-                  type="submit" 
-                  size="lg"
-                  className="w-full"
-                >
-                  Schedule My Free Consultation
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </Button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
+  <div>
+    <label className="block text-sm font-medium text-gray-700 mb-2">
+      Tell us about your project
+    </label>
+    <textarea
+      name="textarea" // Make sure this is "textarea"
+      value={formData.textarea}
+      onChange={(e) => handleInputChange('textarea', e.target.value)}
+      placeholder="Describe your closet space, goals, and any specific requirements..."
+      rows={4}
+      className="form-textarea"
+    />
+  </div>
+  
+  <Button
+    type="submit"
+    size="lg"
+    className="w-full"
+  >
+    Schedule My Free Consultation
+    <ArrowRight className="ml-2 w-5 h-5" />
+  </Button>
+</form>
 
       {/* Footer */}
       <footer className="bg-slate-900 text-white py-12">
