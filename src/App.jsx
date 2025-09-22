@@ -29,7 +29,7 @@ function App() {
     email: '',
     phone: '',
     service: '',
-    timeline: '', // NEW
+    timeline: '',   // required
     textarea: ''
   })
 
@@ -40,37 +40,41 @@ function App() {
   const handleSubmit = async (e) => {
     e.preventDefault()
 
-    // Your Google Apps Script URL
+    // Google Apps Script Web App URL (deployment URL)
     const scriptURL = 'https://script.google.com/macros/s/AKfycbwojV5Kk4RFAN8COsHMXQmFy38VAR4_esdeIj0lHW55kUrl9Pjq48xrQIuGXRRpkYV6dg/exec'
 
-    // Create FormData object
-    const data = new FormData()
-    data.append('name', formData.name)
-    data.append('email', formData.email)
-    data.append('phone', formData.phone)
-    data.append('service', formData.service)
-    data.append('timeline', formData.timeline) // NEW
-    data.append('textarea', formData.textarea)
+    // Build URL-encoded body so GAS reads e.parameter reliably
+    const body = new URLSearchParams({
+      name: formData.name.trim(),
+      email: formData.email.trim(),
+      phone: formData.phone.trim(),
+      service: formData.service,
+      timeline: formData.timeline,  // make sure this key matches GAS
+      textarea: formData.textarea
+    })
 
     try {
-      console.log('Submitting form with data:', formData) // Debug log
+      console.log('Submitting form with data:', Object.fromEntries(body)) // Debug
 
-      const response = await fetch(scriptURL, {
+      await fetch(scriptURL, {
         method: 'POST',
-        mode: 'no-cors', // Using no-cors for Apps Script cross-origin POST
-        body: data,
+        mode: 'no-cors', // avoid CORS errors; you won't be able to read the JSON
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+        },
+        body
       })
 
-      // With no-cors mode, we can't read the response, so we assume success
+      // With no-cors, assume success and show your UI
       alert('Thank you! We will contact you soon.')
 
-      // Clear the form fields after submission
+      // Reset form
       setFormData({
         name: '',
         email: '',
         phone: '',
         service: '',
-        timeline: '', // NEW
+        timeline: '',
         textarea: ''
       })
 
@@ -621,15 +625,16 @@ function App() {
                   </select>
                 </div>
 
-                {/* NEW Timeline field */}
+                {/* Required Timeline field */}
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Timeline
+                    Timeline *
                   </label>
                   <select
                     name="timeline"
                     value={formData.timeline}
                     onChange={(e) => handleInputChange('timeline', e.target.value)}
+                    required
                     className="form-select"
                   >
                     <option value="">Select a timeline...</option>
