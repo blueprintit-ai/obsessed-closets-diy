@@ -109,7 +109,7 @@ function App() {
             <div className="hidden lg:flex items-center space-x-4">
               <div className="flex items-center text-blue-600">
                 <Phone className="w-4 h-4 mr-2" />
-                <span className="text-sm font-medium">(888) 306-3077</span>
+                <span className="text-sm font-medium">(919)945-9036</span>
               </div>
               <Button onClick={() => scrollToSection('contact')}>
                 Get Started
@@ -136,7 +136,7 @@ function App() {
                 <button onClick={() => scrollToSection('contact')} className="text-gray-700 hover:text-blue-600 font-medium text-left transition-colors">Contact</button>
                 <div className="flex items-center text-blue-600 pt-2">
                   <Phone className="w-4 h-4 mr-2" />
-                  <span className="text-sm font-medium">(888) 306-3077</span>
+                  <span className="text-sm font-medium">(919) 945-9036</span>
                 </div>
               </div>
             </div>
@@ -511,7 +511,7 @@ function App() {
                 <div className="flex items-center">
                   <Phone className="w-6 h-6 text-blue-600 mr-4" />
                   <div>
-                    <p className="font-medium text-gray-900">(888) 306-3077</p>
+                    <p className="font-medium text-gray-900">(919) 945-9036</p>
                     <p className="text-gray-600">Monday - Friday, 8AM - 6PM EST</p>
                   </div>
                 </div>
@@ -672,7 +672,7 @@ function App() {
             <div>
               <h4 className="text-lg font-semibold mb-4">Contact Info</h4>
               <div className="space-y-2">
-                <p className="text-gray-400">(888) 306-3077</p>
+                <p className="text-gray-400">919-945-9036</p>
                 <p className="text-gray-400">info@obsessedclosets.com</p>
                 <p className="text-gray-400">Wake Forest, NC</p>
               </div>
