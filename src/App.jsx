@@ -40,16 +40,20 @@ function App() {
     e.preventDefault()
 
     // This is the URL of your Google Apps Script, updated with the new URL
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbwKKU-oa2034mzhoDVp3Vr0MCe-g9uGLIglAz66prZw-4yET0HmBlQbspKhHG7v5WZtnw/exec'
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwzeorPJ984BOSAfIs2rzdRJzMJJjYYss6p_m35xE4GLdmzxZ06fdTsb6pFx31HalP4TA/exec'
+
+    const data = new FormData()
+    // Append each form field to the FormData object
+    data.append('name', formData.name)
+    data.append('email', formData.email)
+    data.append('phone', formData.phone)
+    data.append('service', formData.service)
+    data.append('textarea', formData.textarea)
 
     try {
       const response = await fetch(scriptURL, {
         method: 'POST',
-        // Send the data as a JSON string
-        body: JSON.stringify(formData),
-        headers: {
-          'Content-Type': 'application/json'
-        }
+        body: data,
       })
 
       if (response.ok) {
