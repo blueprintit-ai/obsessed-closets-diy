@@ -547,7 +547,7 @@ function App() {
               <div className="mt-8 space-y-4">
                 <div className="flex items-center">
                   <CheckCircle className="w-5 h-5 text-blue-600 mr-3" />
-                  <span className="text-gray-700">Free discovery call consultation</span>
+                  <span className="text-gray-700">Free design consultation</span>
                 </div>
                 <div className="flex items-center">
                   <CheckCircle className="w-5 h-5 text-blue-600 mr-3" />
@@ -561,7 +561,7 @@ function App() {
             </div>
 
             <div className="bg-slate-50 rounded-lg p-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">Free Discovery Call</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">Free Design Consultation Call</h3>
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
@@ -664,7 +664,7 @@ function App() {
                   size="lg"
                   className="w-full"
                 >
-                  Schedule My Free Discovery Call
+                  Schedule My Free Virtual Design Consultation
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </form>
