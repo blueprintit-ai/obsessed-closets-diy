@@ -617,11 +617,11 @@ function App() {
                     className="form-select"
                   >
                     <option value="">Select a service...</option>
-                    <option value="closet">Closet</option>
-                    <option value="pantry">Pantry</option>
-                    <option value="garage">Garage</option>
-                    <option value="laundry">Laundry</option>
-                    <option value="other">Other</option>
+                    <option value="Closet">Closet</option>
+                    <option value="Pantry">Pantry</option>
+                    <option value="Garage">Garage</option>
+                    <option value="Laundry">Laundry</option>
+                    <option value="Other">Other</option>
                   </select>
                 </div>
 
