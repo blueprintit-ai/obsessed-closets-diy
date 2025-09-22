@@ -41,7 +41,7 @@ function App() {
     e.preventDefault()
 
     // Google Apps Script Web App URL (deployment URL)
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbwojV5Kk4RFAN8COsHMXQmFy38VAR4_esdeIj0lHW55kUrl9Pjq48xrQIuGXRRpkYV6dg/exec'
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbz3BD8o0mnUOOshQYbJ3CZQ89GwEmJ6dD7HeRjpqB_6Jg-CaMth8eJxGBonT9cZ1wE8qw/exec'
 
     // Build URL-encoded body so GAS reads e.parameter reliably
     const body = new URLSearchParams({
