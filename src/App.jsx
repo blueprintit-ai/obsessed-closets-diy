@@ -531,7 +531,6 @@ function App() {
                   <Mail className="w-6 h-6 text-blue-600 mr-4" />
                   <div>
                     <p className="font-medium text-gray-900">info@obsessedclosets.com</p>
-                    <p className="text-gray-600">We'll respond within 24 hours</p>
                   </div>
                 </div>
 
