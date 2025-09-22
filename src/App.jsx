@@ -39,11 +39,11 @@ function App() {
   const handleSubmit = async (e) => {
     e.preventDefault()
 
-    // This is the URL of your Google Apps Script, updated with the new URL
+    // Your Google Apps Script URL
     const scriptURL = 'https://script.google.com/macros/s/AKfycbwzeorPJ984BOSAfIs2rzdRJzMJJjYYss6p_m35xE4GLdmzxZ06fdTsb6pFx31HalP4TA/exec'
 
+    // Create FormData object
     const data = new FormData()
-    // Append each form field to the FormData object
     data.append('name', formData.name)
     data.append('email', formData.email)
     data.append('phone', formData.phone)
@@ -51,24 +51,26 @@ function App() {
     data.append('textarea', formData.textarea)
 
     try {
+      console.log('Submitting form with data:', formData) // Debug log
+      
       const response = await fetch(scriptURL, {
         method: 'POST',
+        mode: 'no-cors', // Add this line for Google Apps Script
         body: data,
       })
 
-      if (response.ok) {
-        alert('Thank you! We will contact you soon.')
-        // Clear the form fields after successful submission
-        setFormData({
-          name: '',
-          email: '',
-          phone: '',
-          service: '',
-          textarea: ''
-        })
-      } else {
-        alert('There was an error submitting the form. Please try again.')
-      }
+      // With no-cors mode, we can't read the response, so we assume success
+      alert('Thank you! We will contact you soon.')
+      
+      // Clear the form fields after successful submission
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        service: '',
+        textarea: ''
+      })
+
     } catch (error) {
       console.error('Error:', error)
       alert('There was an error submitting the form. Please try again.')
