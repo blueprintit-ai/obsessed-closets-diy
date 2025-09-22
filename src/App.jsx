@@ -435,9 +435,9 @@ function App() {
               <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Star className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">Quality </h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Quality Control</h3>
               <p className="text-gray-600">
-                We're obsessed with quality in every detail; from design to fabrication to installation support.
+                We're obsessed with quality in every detail; from design to fabrication to installation support. We are not a wholesaler that orders parts from overseas. We fabricate all our cabinet and closet parts at our shop in Wake Forest, North Carolina. 
               </p>
             </div>
 
