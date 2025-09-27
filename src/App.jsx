@@ -55,7 +55,7 @@ const ThankYouModal = ({ isOpen, onClose }) => {
           <h3 className="text-2xl font-bold text-gray-900 mb-4">Thank You!</h3>
           
           <p className="text-gray-600 mb-6">
-            Your request has been submitted successfully. We'll contact you within 24 hours to schedule your free design consultation!
+            Your request has been submitted successfully. We'll contact you within the next hour to schedule your free design consultation!
           </p>
           
           <button
