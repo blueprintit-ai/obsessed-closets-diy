@@ -22,8 +22,58 @@ import modernCloset from './assets/modern-closet.webp'
 import qualityCloset from './assets/quality-closet-clean.png'
 import ocLogo from './assets/oc-logo-new.png'
 
+// Loading Spinner Component
+const LoadingSpinner = () => (
+  <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+  </svg>
+);
+
+// Thank You Modal Component
+const ThankYouModal = ({ isOpen, onClose }) => {
+  if (!isOpen) return null;
+
+  return (
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+      <div className="bg-white rounded-lg p-8 max-w-md w-full mx-4 relative">
+        <button 
+          onClick={onClose}
+          className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 text-2xl font-bold leading-none"
+          aria-label="Close"
+        >
+          ×
+        </button>
+        
+        <div className="text-center">
+          <div className="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-green-100 mb-4">
+            <svg className="h-6 w-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+          </div>
+          
+          <h3 className="text-2xl font-bold text-gray-900 mb-4">Thank You!</h3>
+          
+          <p className="text-gray-600 mb-6">
+            Your request has been submitted successfully. We'll contact you within 24 hours to schedule your free design consultation!
+          </p>
+          
+          <button
+            onClick={onClose}
+            className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200 font-semibold"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false) // NEW: Loading state
+  const [showThankYou, setShowThankYou] = useState(false) // NEW: Thank you modal state
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -39,6 +89,17 @@ function App() {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+
+    // Prevent multiple submissions - NEW
+    if (isSubmitting) return;
+
+    // Basic validation - NEW
+    if (!formData.name || !formData.email || !formData.phone || !formData.timeline) {
+      alert('Please fill in all required fields.');
+      return;
+    }
+
+    setIsSubmitting(true); // NEW: Set loading state
 
     // Google Apps Script Web App URL (deployment URL)
     const scriptURL = 'https://script.google.com/macros/s/AKfycbz3BD8o0mnUOOshQYbJ3CZQ89GwEmJ6dD7HeRjpqB_6Jg-CaMth8eJxGBonT9cZ1wE8qw/exec'
@@ -66,7 +127,8 @@ function App() {
       })
 
       // With no-cors, assume success and show your UI
-      alert('Thank you! We will contact you soon.')
+      // UPDATED: Show modal instead of alert
+      setShowThankYou(true);
 
       // Reset form
       setFormData({
@@ -81,6 +143,8 @@ function App() {
     } catch (error) {
       console.error('Error:', error)
       alert('There was an error submitting the form. Please try again.')
+    } finally {
+      setIsSubmitting(false); // NEW: Reset loading state
     }
   }
 
@@ -573,7 +637,8 @@ function App() {
                     value={formData.name}
                     onChange={(e) => handleInputChange('name', e.target.value)}
                     required
-                    className="form-input"
+                    disabled={isSubmitting}
+                    className={`form-input ${isSubmitting ? 'bg-gray-100 cursor-not-allowed' : ''}`}
                   />
                 </div>
 
@@ -587,7 +652,8 @@ function App() {
                     value={formData.email}
                     onChange={(e) => handleInputChange('email', e.target.value)}
                     required
-                    className="form-input"
+                    disabled={isSubmitting}
+                    className={`form-input ${isSubmitting ? 'bg-gray-100 cursor-not-allowed' : ''}`}
                   />
                 </div>
 
@@ -601,7 +667,8 @@ function App() {
                     value={formData.phone}
                     onChange={(e) => handleInputChange('phone', e.target.value)}
                     required
-                    className="form-input"
+                    disabled={isSubmitting}
+                    className={`form-input ${isSubmitting ? 'bg-gray-100 cursor-not-allowed' : ''}`}
                   />
                 </div>
 
@@ -613,7 +680,8 @@ function App() {
                     name="service"
                     value={formData.service}
                     onChange={(e) => handleInputChange('service', e.target.value)}
-                    className="form-select"
+                    disabled={isSubmitting}
+                    className={`form-select ${isSubmitting ? 'bg-gray-100 cursor-not-allowed' : ''}`}
                   >
                     <option value="">Select a service...</option>
                     <option value="Closet">Closet</option>
@@ -634,7 +702,8 @@ function App() {
                     value={formData.timeline}
                     onChange={(e) => handleInputChange('timeline', e.target.value)}
                     required
-                    className="form-select"
+                    disabled={isSubmitting}
+                    className={`form-select ${isSubmitting ? 'bg-gray-100 cursor-not-allowed' : ''}`}
                   >
                     <option value="">Select a timeline...</option>
                     <option value="ASAP">ASAP</option>
@@ -654,18 +723,35 @@ function App() {
                     onChange={(e) => handleInputChange('textarea', e.target.value)}
                     placeholder="Describe your closet space, goals, and any specific requirements..."
                     rows={4}
-                    className="form-textarea"
+                    disabled={isSubmitting}
+                    className={`form-textarea ${isSubmitting ? 'bg-gray-100 cursor-not-allowed' : ''}`}
                   />
                 </div>
 
                 <Button
                   type="submit"
                   size="lg"
-                  className="w-full"
+                  className={`w-full ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`}
+                  disabled={isSubmitting}
                 >
-                  Schedule My Free Design Consultation
-                  <ArrowRight className="ml-2 w-5 h-5" />
+                  {isSubmitting ? (
+                    <div className="flex items-center justify-center">
+                      <LoadingSpinner />
+                      <span className="ml-2">Sending Request...</span>
+                    </div>
+                  ) : (
+                    <>
+                      Schedule My Free Design Consultation
+                      <ArrowRight className="ml-2 w-5 h-5" />
+                    </>
+                  )}
                 </Button>
+                
+                {isSubmitting && (
+                  <p className="text-sm text-gray-500 text-center">
+                    Please wait while we process your request...
+                  </p>
+                )}
               </form>
             </div>
           </div>
@@ -716,6 +802,12 @@ function App() {
           </div>
         </div>
       </footer>
+
+      {/* Thank You Modal - NEW */}
+      <ThankYouModal 
+        isOpen={showThankYou} 
+        onClose={() => setShowThankYou(false)} 
+      />
     </div>
   )
 }
