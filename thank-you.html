@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - Obsessed Closets</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        .animate-pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-blue-50 to-slate-100 flex items-center justify-center p-4">
+    <!-- Close button -->
+    <button
+        onclick="window.close()"
+        class="fixed top-6 right-6 z-50 bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-shadow duration-200 hover:bg-gray-50"
+        aria-label="Close window"
+    >
+        <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+    </button>
+
+    <div class="max-w-2xl mx-auto text-center">
+        <!-- Logo -->
+        <div class="mb-8">
+            <img
+                src="./oc-logo-new.png"
+                alt="Obsessed Closets Logo"
+                class="h-20 w-auto mx-auto"
+                onerror="this.style.display='none'"
+            />
+        </div>
+
+        <!-- Success Icon -->
+        <div class="mb-8">
+            <div class="w-24 h-24 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6 animate-pulse">
+                <svg class="w-12 h-12 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Thank You Message -->
+        <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                Thank You!
+            </h1>
+            
+            <p class="text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed">
+                Your request for a free design consultation has been successfully submitted.
+            </p>
+
+            <div class="bg-blue-50 rounded-lg p-6 mb-8">
+                <h2 class="text-lg font-semibold text-blue-900 mb-3">
+                    What happens next?
+                </h2>
+                <div class="text-left space-y-3 text-blue-800">
+                    <div class="flex items-start">
+                        <svg class="w-5 h-5 text-blue-600 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        <span>We'll review your project details within 24 hours</span>
+                    </div>
+                    <div class="flex items-start">
+                        <svg class="w-5 h-5 text-blue-600 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        <span>Our design team will contact you to schedule your consultation</span>
+                    </div>
+                    <div class="flex items-start">
+                        <svg class="w-5 h-5 text-blue-600 mr-3 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                        <span>We'll discuss your vision and create a custom design plan</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-200 pt-6">
+                <p class="text-gray-600 mb-4">
+                    Questions? Contact us directly:
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center text-blue-600">
+                    <a 
+                        href="tel:+19199459036" 
+                        class="font-semibold hover:text-blue-800 transition-colors"
+                    >
+                        (919) 945-9036
+                    </a>
+                    <span class="hidden sm:inline text-gray-400">|</span>
+                    <a 
+                        href="mailto:info@obsessedclosets.com" 
+                        class="font-semibold hover:text-blue-800 transition-colors"
+                    >
+                        info@obsessedclosets.com
+                    </a>
+                </div>
+            </div>
+
+            <div class="mt-8">
+                <button
+                    onclick="window.close()"
+                    class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl"
+                >
+                    Close Window
+                </button>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="mt-8 text-gray-500 text-sm">
+            © 2024 Obsessed Closets. All rights reserved.
+        </div>
+    </div>
+
+    <script>
+        // Auto-focus the close button for accessibility
+        document.addEventListener('DOMContentLoaded', function() {
+            // Allow ESC key to close the window
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'Escape') {
+                    window.close();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
