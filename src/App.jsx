@@ -24,6 +24,7 @@ import ocLogo from './assets/oc-logo-new.png'
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -39,6 +40,12 @@ function App() {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+
+    // Prevent duplicate submissions
+    if (isSubmitting) return
+
+    // Set loading state immediately
+    setIsSubmitting(true)
 
     // Google Apps Script Web App URL (deployment URL)
     const scriptURL = 'https://script.google.com/macros/s/AKfycbz3BD8o0mnUOOshQYbJ3CZQ89GwEmJ6dD7HeRjpqB_6Jg-CaMth8eJxGBonT9cZ1wE8qw/exec'
@@ -65,8 +72,18 @@ function App() {
         body
       })
 
-      // With no-cors, assume success and show your UI
-      alert('Thank you! We will contact you soon.')
+      // With no-cors, assume success and open thank you page in new window
+      // Open thank you page in a new full-screen window
+      const thankYouWindow = window.open(
+        '/thank-you.html',
+        '_blank',
+        'fullscreen=yes,scrollbars=yes,resizable=yes,status=no,toolbar=no,menubar=no,location=no'
+      )
+      
+      // Fallback for browsers that don't support fullscreen parameter
+      if (thankYouWindow) {
+        thankYouWindow.focus()
+      }
 
       // Reset form
       setFormData({
@@ -78,9 +95,15 @@ function App() {
         textarea: ''
       })
 
+      // Reset loading state after a short delay to allow thank you window to open
+      setTimeout(() => {
+        setIsSubmitting(false)
+      }, 2000)
+
     } catch (error) {
       console.error('Error:', error)
       alert('There was an error submitting the form. Please try again.')
+      setIsSubmitting(false) // Reset loading state on error
     }
   }
 
@@ -170,7 +193,7 @@ function App() {
               Do-It-Yourself Storage Systems with Expert Guidance
             </h1>
             <p className="text-xl lg:text-2xl mb-8 text-gray-200">
-              Transform your space with our comprehensive DIY program - From design to installation; we guide you every step of the way
+              Transform your space with our comprehensive DIY program - From design to installation, we guide you every step of the way
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
@@ -253,7 +276,7 @@ function App() {
                   <h3 className="text-2xl font-bold text-gray-900">Discovery Call</h3>
                 </div>
                 <p className="text-lg text-gray-600 mb-4">
-                  On a Zoom call we discuss your organization goals, understand your needs, and begin the design process together. Our expert designers learn about your desires and storage requirements and design with you in realtime.
+                  We discuss your organization goals, understand your needs, and begin the design process together. Our expert designers learn about your desires and storage requirements.
                 </p>
                 <div className="flex items-center text-blue-600">
                   <Users className="w-5 h-5 mr-2" />
@@ -320,7 +343,7 @@ function App() {
               <div className="lg:w-1/2">
                 <div className="flex items-center mb-4">
                   <Badge className="text-lg px-4 py-2 mr-4">Step 4</Badge>
-                  <h3 className="text-2xl font-bold text-gray-900">Delivery to your location</h3>
+                  <h3 className="text-2xl font-bold text-gray-900">Direct delivery to your location</h3>
                 </div>
                 <p className="text-lg text-gray-600 mb-4">
                   All closet parts, hardware, and accessories are delivered to your location, ready for installation. Everything is packaged and labeled for easy identification.
@@ -662,9 +685,19 @@ function App() {
                   type="submit"
                   size="lg"
                   className="w-full"
+                  disabled={isSubmitting}
                 >
-                  Schedule My Free Design Consultation
-                  <ArrowRight className="ml-2 w-5 h-5" />
+                  {isSubmitting ? (
+                    <>
+                      <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
+                      Submitting...
+                    </>
+                  ) : (
+                    <>
+                      Schedule My Free Design Consultation
+                      <ArrowRight className="ml-2 w-5 h-5" />
+                    </>
+                  )}
                 </Button>
               </form>
             </div>
