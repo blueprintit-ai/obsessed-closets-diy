@@ -231,7 +231,7 @@ function App() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
           <div className="max-w-4xl mx-auto animate-fadeIn">
             <h1 className="text-4xl lg:text-6xl font-bold mb-4">
-              Do-It-Yourself Storage Systems with Expert Guidance
+              Your Dream Closet is Now DIY-able. And up to 70% Off.
             </h1>
             <h2 className="text-xl lg:text-2xl font-semibold tracking-wider text-gray-300 mb-6">
               Closets | Laundry | Garage | Pantry
@@ -287,7 +287,7 @@ function App() {
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-4">Premium Quality Materials</h3>
               <p className="text-gray-600">
-                High-quality materials and precision fabrication delivered to your door.
+                High-quality materials and precision fabrication with the option for delivery to your door.
               </p>
             </div>
 
@@ -392,14 +392,14 @@ function App() {
               <div className="lg:w-1/2">
                 <div className="flex items-center mb-4">
                   <Badge className="text-lg px-4 py-2 mr-4">Step 4</Badge>
-                  <h3 className="text-2xl font-bold text-gray-900">Delivery to your location</h3>
+                  <h3 className="text-2xl font-bold text-gray-900">Optional delivery to your location</h3>
                 </div>
                 <p className="text-lg text-gray-600 mb-4">
-                  All closet parts, hardware, and accessories are delivered to your location, ready for installation. Everything is packaged and labeled for easy identification.
+                  All closet parts, hardware, and accessories can be delivered to your location or picked up at our shop location in Wake Forest, ready for installation. Everything is packaged and labeled for easy identification.
                 </p>
                 <div className="flex items-center text-blue-600">
                   <Truck className="w-5 h-5 mr-2" />
-                  <span className="font-medium">Delivery on pallets to your driveway or garage</span>
+                  <span className="font-medium">Optional delivery to your driveway or garage</span>
                 </div>
               </div>
               <div className="lg:w-1/2">
