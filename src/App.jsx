@@ -389,7 +389,7 @@ function App() {
               <div className="lg:w-1/2">
                 <div className="flex items-center mb-4">
                   <Badge className="text-lg px-4 py-2 mr-4">Step 4</Badge>
-                  <h3 className="text-2xl font-bold text-gray-900">Optional delivery to your location</h3>
+                  <h3 className="text-2xl font-bold text-gray-900">Delivery or Pick Up</h3>
                 </div>
                 <p className="text-lg text-gray-600 mb-4">
                   All closet parts, hardware, and accessories can be delivered to your location or picked up at our shop location in Wake Forest, ready for installation. Everything is packaged and labeled for easy identification.
