@@ -236,9 +236,6 @@ function App() {
             <h2 className="text-xl lg:text-2xl font-semibold tracking-wider text-gray-300 mb-6">
               Closets | Laundry | Garage | Pantry
             </h2>
-            <p className="text-xl lg:text-2xl mb-8 text-gray-200">
-              Transform your space with our comprehensive DIY program - From design to installation, we guide you every step of the way.
-            </p>
             
             {/* --- MOVED THIS ENTIRE DIV UP --- */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
