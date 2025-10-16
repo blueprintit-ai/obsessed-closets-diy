@@ -228,14 +228,21 @@ function App() {
           <div className="absolute inset-0 bg-gray-600 opacity-50"></div>
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
-          <div className="max-w-4xl mx-auto animate-fadeIn">
-            <h1 className="text-4xl lg:text-6xl font-bold mb-6">
-              Do-It-Yourself Storage Systems with Expert Guidance
-            </h1>
-            <p className="text-xl lg:text-2xl mb-8 text-gray-200">
-              Transform your space with our comprehensive DIY program - From design to installation; we guide you every step of the way
-            </p>
+<div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+  <div className="max-w-4xl mx-auto animate-fadeIn">
+    <h1 className="text-4xl lg:text-6xl font-bold mb-4">
+      Do-It-Yourself Storage Systems with Expert Guidance
+    </h1>
+    {/* --- ADDED THIS LINE --- */}
+    <h2 className="text-xl lg:text-2xl font-semibold tracking-wider text-gray-300 mb-6">
+      Closets | Laundry | Garage | Pantry
+    </h2>
+    {/* -------------------- */}
+    <p className="text-xl lg:text-2xl mb-8 text-gray-200">
+      Transform your space with our comprehensive DIY program - From design to installation, we guide you every step of the way.
+    </p>
+  </div>
+</div>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 size="lg"
